@@ -51,8 +51,10 @@ string reverseStr(string s)
 
 int main()
 {
+
 string str="My Name is Khan";   
 string rev=reverseStr(str);
-cout<<"the string with reverse word is:"<<rev;
+cout<<"the string with reverse word is : "<<rev;
+
 return 0;
 }

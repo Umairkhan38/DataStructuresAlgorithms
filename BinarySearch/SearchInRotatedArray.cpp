@@ -58,9 +58,10 @@ int findPosition(int arr[], int n, int k)
 
 }
 
+
 // Main Function 
 int main(){
-    int arr[8]={7,8,1,2,3,4,5,6};
-    int n= sizeof(arr)/4,k=4;
+    int arr[2]={1,3};
+    int n= sizeof(arr)/4,k=3;
     cout<<"The position of element k in rotated array is at index : "<<findPosition(arr,n, k);
 }

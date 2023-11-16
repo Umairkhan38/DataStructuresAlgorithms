@@ -32,7 +32,7 @@ void printArray(int arr[],int n){
 
 
 int main(){
-int arr[]={1,3,5,6,7}, n=sizeof(arr)/4;
+int arr[]={1,3,5,6,7},n=sizeof(arr)/4;
 int arr1[]={2,3,4}, m = sizeof(arr1)/4;
 int mergedSize=m+n;
 int merged[mergedSize];
@@ -40,5 +40,4 @@ mergArray(arr,n,arr1,m,merged);
 printArray(merged,mergedSize);
 
 return 0;
-
 }

@@ -4,7 +4,7 @@ using namespace std;
 
 char mostOccur(string s){
     int arr[26]={0};
-    int number=0;
+     int number=0;
     for(int i=0;i<s.length();i++){
         if(s[i]>='a' && s[i]<='z'){
             number=s[i]-'a';
