@@ -14,17 +14,20 @@ class Node{
         this->prev=NULL;
     }
 
+    //creating na destructor
+    ~Node(){
+        int value = this->data;
+        if(this->next != NULL){
+            delete next;
+            next = NULL;
+        }
+        cout<<"memeory freed!"<<endl;
+
+    }
+
 };
 
-void printList(Node* &head){
 
-    Node*temp = head;
-
-    while(temp!=NULL){
-        cout<<temp->data<<" ";
-        temp= temp->next;
-    }
-}
 
 
 int getLength(Node* &head){
@@ -75,7 +78,6 @@ void insertAtTail(Node* &tail, Node* &head,  int data){
 
 void insertAtPosition(Node* &head, Node* &tail,  int position, int data)
 {
-
     //if position one at head position
     if(position == 1){
         return insertAtHead(head,tail,data);
@@ -104,6 +106,48 @@ void insertAtPosition(Node* &head, Node* &tail,  int position, int data)
 }
 
 
+void deleteNode(Node* &head, Node* &tail, int position)
+{
+    //deleting node from first position
+    if(position == 1){
+        Node*temp = head;
+        temp->next->prev=NULL;
+        head=temp->next;
+        temp->next=NULL;
+        delete temp;
+        
+    }else{
+
+        //deleteing from middle or last
+        Node*curr = head;
+        Node*prev = NULL;
+
+        int count=1;
+        while(count<position){
+            prev=curr;
+            curr=curr->next;
+            count++;
+            if(curr->next==NULL){
+                tail= prev;
+             }
+        }
+        curr->prev=NULL;
+        prev->next=curr->next;
+        curr->next=NULL;
+        delete curr;
+    }
+
+}
+
+void printList(Node* &head){
+
+    Node*temp = head;
+
+    while(temp!=NULL){
+        cout<<temp->data<<" ";
+        temp= temp->next;
+    }
+}
 
 int main()
 {
@@ -113,8 +157,13 @@ int main()
   insertAtHead(head,tail,95);
   insertAtTail(tail,head,999);
   insertAtPosition(head,tail,2,25522);
+  cout<<"List before deletion"<<endl;
   printList(head);  
-  cout<<endl<<"the length of link list is : "<<getLength(head);  
+  deleteNode(head,tail,4);
+  cout<<"List after deletion"<<endl;
+  printList(head);  
+  cout<<endl<<"the length of link list is : "<<getLength(head)<<endl;  
+  cout<<"tail is "<<tail->data;
 
 return 0;
 }
