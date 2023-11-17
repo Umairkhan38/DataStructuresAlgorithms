@@ -1,6 +1,7 @@
 #include<iostream>
 using namespace std;
 
+
 class Node{
 
     public:
@@ -104,7 +105,6 @@ void deleteAtPosition(Node* &head, Node* &tail, int position){
         delete curr;
     }
 
-
 }
 
 
@@ -120,6 +120,7 @@ void printList(Node* &head){
 
 int main()
 {
+    
     //create a node
     Node* n1 = new Node(5);
     Node * head = n1;   //head pointer to original n1 node
@@ -136,7 +137,6 @@ int main()
     deleteAtPosition(head,tail,4);
     printList(head);
 
-
-
     return 0;
+
 }
