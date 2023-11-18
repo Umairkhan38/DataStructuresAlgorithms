@@ -48,8 +48,27 @@ Node *findMiddle(Node *head) {
      }
      return temp;
 
-
 }
+
+
+Node*slowAndFastPointer(Node* head){
+
+//if list is empty
+    if(head == NULL || head->next==NULL){
+        return head;
+    }
+
+    Node*fast =head;
+    Node*slow =head;
+
+    while(fast!=NULL && fast->next!=NULL){
+        fast=fast->next->next;
+        slow=slow->next;
+    }
+
+    return slow;
+}
+
 
 void printList(Node* &head){
     Node*temp = head;
@@ -75,10 +94,11 @@ int main()
     cout<<"Link List is "<<endl;
     printList(head);
     cout<<"Middle of linkList is ";
-    Node*temp = findMiddle(head);
+    // Node*temp = findMiddle(head);
+    //fast and slow pointer approach
+    Node*temp = slowAndFastPointer(head);
     cout<<temp->data;
     
 
     return 0;
-
 }
