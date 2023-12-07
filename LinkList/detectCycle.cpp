@@ -16,6 +16,7 @@ class Node{
         this->next = NULL;
     }
 
+
     //desctructor to delete the node
     ~Node(){
         int value = this->data;
@@ -29,7 +30,6 @@ class Node{
 
     }
 };
-
 
 void insertAtHead(Node* &head, int d){
     //create New Node
@@ -109,7 +109,7 @@ bool detectCycle(Node*head){
 //Approach using Floyd Cycle 
 //space complexity - O(n)
 //Time complexity - O(1)
-bool floydDetectLoop(Node*head){
+Node* floydDetectLoop(Node*head){
 
     Node*fast = head;
     Node*slow = head;
@@ -124,11 +124,56 @@ bool floydDetectLoop(Node*head){
         slow= slow->next;
 
         if(fast == slow){
-            return true;
+            return slow;
         }
     } 
-    return false;
+
+    return NULL;
 }
+
+
+//finding starting Node
+Node* detectStartingNode(Node*head){
+
+        if(head == NULL){
+            return NULL;
+        }
+
+        Node*intersection = floydDetectLoop(head);
+        
+        //In case if there is no Loop detect we will return starting elem as head
+        if(intersection == NULL){
+            return head;
+        }
+
+        Node*slow = head;
+        while(slow != intersection){
+            slow = slow->next;              
+            intersection = intersection->next;              
+        }    
+       return slow; 
+
+}
+
+
+
+//Remove Loop
+void RemoveLoop(Node* &head){
+
+    if(head == NULL){
+        return ;
+    }
+
+    Node*startOfLoop = detectStartingNode(head);
+    Node*temp = startOfLoop;
+
+    while(temp->next != startOfLoop){
+        temp = temp->next;
+    } 
+
+    temp->next = NULL;
+}
+
 
 
 
@@ -157,7 +202,13 @@ int main()
     tail->next = head->next;
 
     // detectCycle(head) == true ? cout<<"Cycle is present!" : cout<<"Cycle not Detected!";
-    floydDetectLoop(head) == true ? cout<<"Cycle is present!" : cout<<"Cycle not Detected!";
+    // floydDetectLoop(head) == true ? cout<<"Cycle is present!" : cout<<"Cycle not Detected!";
+    Node*start = detectStartingNode(head);
+    cout<<"Starting Node of a Loop is "<<start->data<<endl;
+    RemoveLoop(head);    
+    cout<<"List After Removing Loop "<<endl;
+    printList(head);
+
 
     // printList(head);
 

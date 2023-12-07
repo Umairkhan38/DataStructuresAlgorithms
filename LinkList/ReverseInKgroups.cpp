@@ -33,6 +33,11 @@ Node*reverseInKGroups(Node* &head, int k){
         size++;
     }
 
+    if(size<k){
+        return head;
+    }
+
+
     // if No Node is present
     if(head == NULL){
         return NULL;

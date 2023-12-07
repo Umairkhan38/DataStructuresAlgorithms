@@ -16,15 +16,17 @@ class Node{
 };
 
 
+
+
 //Recursive Function Approach
-void reverse(Node* &head, Node* &curr, Node*&prev)
+void reverse(Node* &head, Node* curr, Node*prev)
 {
 
     //base case
-    if(curr == NULL)
+    if(curr == NULL){
         head = prev;
         return;
-
+}
     Node*forward = curr->next;
     reverse(head, forward, curr);
     curr->next = prev;
@@ -34,20 +36,19 @@ void reverse(Node* &head, Node* &curr, Node*&prev)
 
 Node*reverseLinkedList(Node* &head) 
 {       
-
-        //Recursive Approach
-        if(head==NULL || head->next == NULL){
-            return head;
-        }
-
         Node*prev=NULL;
         Node*curr = head;
         Node *forward = curr->next;
 
+
+        //Recursive Approach
         reverse(head, curr, prev);
         return head;
 
         //Iterative Approach
+        // if(head==NULL || head->next == NULL){
+        //     return head;
+        // }
 
     //     while(curr!=NULL){
     //         forward= curr->next;
@@ -60,7 +61,6 @@ Node*reverseLinkedList(Node* &head)
 }
 
 
-
 void printList(Node *head ){
 
     Node*temp = head;
@@ -71,6 +71,7 @@ void printList(Node *head ){
     }
     cout<<endl;
 }
+
 
 void insertAtHead(Node* &head, int d){
     //create New Node
