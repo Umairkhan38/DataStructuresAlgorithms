@@ -26,9 +26,11 @@ void reverse(vector<int>&arr){
         for(int i=0;i<row;i++){
             reverse(matrix[i]);
         }    
-    }
+    
+}
 
     
+
 
 int main()
 {
@@ -44,3 +46,4 @@ int main()
 
 return 0;
 }
+
