@@ -23,6 +23,7 @@ void insertAthead(Node* &head, int data){
     head = temp;
 }
 
+
 Node*reverseInKGroups(Node* &head, int k){
 
     //if Node elements are less than k
@@ -71,10 +72,10 @@ Node*reverseInKGroups(Node* &head, int k){
 }
 
 
-void printList(Node* head){
+void printList(Node* head ,int k){
 
     Node*temp = head;
-    cout<<"Link List after Reversed In K groups "<<endl;
+    cout<<"Link List after Reversed In group of "<<k<<" Elements "<<endl;
     while(temp!=NULL){
         cout<<temp->data<<" ";
         temp = temp ->next;
@@ -91,7 +92,7 @@ int main()
     insertAthead(head,36);
     insertAthead(head,35);
     Node*ans = reverseInKGroups(head,k);
-    printList(ans);
+    printList(ans,k);
 
 return 0;
 }

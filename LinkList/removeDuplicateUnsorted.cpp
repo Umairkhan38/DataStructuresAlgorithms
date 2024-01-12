@@ -33,6 +33,7 @@ Node*removeDuplicates(Node* &head)
   
   Node* curr = head;
   
+
   while(curr != NULL){
     Node* prev = curr;
     Node * temp = curr -> next;
@@ -66,13 +67,14 @@ void printList(Node* &head){
 }
 
 
+
 int main()
-{
-    
+{    
     //create a node
     Node* n1 = new Node(5);
     Node * head = n1;   //head pointer to original n1 node
     insertAtHead(head,50);
+    insertAtHead(head,86);
     insertAtHead(head,56);
     insertAtHead(head,86);
     insertAtHead(head,50);
