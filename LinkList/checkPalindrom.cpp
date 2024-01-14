@@ -38,6 +38,7 @@ void insertAtHead(Node* &head, int d){
         
     }
     
+
     Node*reverse(Node*head)
     {
         Node*curr=head;
@@ -52,6 +53,7 @@ void insertAtHead(Node* &head, int d){
         }
         return prev;
     }   
+    
 
 bool checkPalindrome(vector<int>&arr)
     {
@@ -67,6 +69,7 @@ bool checkPalindrome(vector<int>&arr)
         return true;
     }
     
+
     bool isPalindrome(Node *head)
     {
         
