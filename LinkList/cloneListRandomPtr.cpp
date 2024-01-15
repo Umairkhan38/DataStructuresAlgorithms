@@ -139,11 +139,14 @@ void insertAtHead(Node* &head, int d){
             temp = temp->next->next;
         }
             
+
+
+            //Now make it as og
             Node*ogNode = head;
             cloneNode = cloneHead;
             
         
-           while(ogNode!=NULL && cloneNode!=NULL){
+            while(ogNode!=NULL && cloneNode!=NULL){
                 ogNode->next = cloneNode->next;
                 ogNode = ogNode->next;
                 
@@ -152,9 +155,8 @@ void insertAtHead(Node* &head, int d){
                 }
                 cloneNode = cloneNode->next;
               
-        }
-        return cloneHead;
-      
+            }
+        return cloneHead;    
         
     }
 
@@ -171,7 +173,6 @@ void printList(Node* &head){
 
 int main()
 {
-    
     //create a node
    Node*head = NULL;
    insertAtHead(head,5);
@@ -179,7 +180,5 @@ int main()
    insertAtHead(head,8);
    printList(head);
 
-
     return 0;
-
 }
