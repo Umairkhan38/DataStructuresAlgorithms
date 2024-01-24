@@ -4,7 +4,7 @@ using namespace std;
 
 
 
-void solve(stack<int>& myStack, int x){
+void insertAtBottom(stack<int>& myStack, int x){
 
     //base case
     if(myStack.empty()){
@@ -16,18 +16,11 @@ void solve(stack<int>& myStack, int x){
     int num = myStack.top();
     myStack.pop();
 
-    solve(myStack,x);
+    insertAtBottom(myStack,x);
 
     myStack.push(num);
 }
 
-
-void insertAtBottom(stack<int> &stack , int num){
-
-        //base case
-        solve(stack,num);
-
-}
 
 
 void reverseStack(stack<int> &stack) {
@@ -58,6 +51,7 @@ st.push(56);
 reverseStack(st);
 
 cout<<"The stack after Reverse : "<<endl;
+
 while(!st.empty()){
     cout<<st.top()<<" ";
     st.pop();
@@ -65,3 +59,5 @@ while(!st.empty()){
 
 return 0;
 }
+
+
