@@ -20,17 +20,16 @@ int findMinimumCost(string str) {
       st.push(ch);
 
     }else{
+
       if(!st.empty() && st.top()=='{'){
           st.pop();
+      
       }else{
 
         st.push(ch);
 
       }
-      
-
     }
-
   }
 
   int a=0, b=0;
@@ -55,4 +54,5 @@ int main()
     cout<<"The Min Cost Required To get Valid string of Parenthes is : "<<findMinimumCost(str);
 
     return 0;
+    
 }
