@@ -5,19 +5,18 @@ using namespace std;
 
 
     // #here the celebrity is the person who doesn't know anyone but all know him:
-
-
- bool knows(vector<vector<int>>&M, int a, int b, int n){
+    bool knows(vector<vector<int>>&M, int a, int b, int n){
         
         if(M[a][b] == 1){
             return true;
         }else{
             return false;
-        }
-        
+        }    
     }
     
-        //Function to find if there is a celebrity in the party or not.
+
+
+    //Function to find if there is a celebrity in the party or not.
     int celebrity(vector<vector<int> >& M, int n) 
     {
         stack<int>st;
@@ -39,7 +38,7 @@ using namespace std;
                 st.push(a);
             }
         }
-        
+    
         
         int candidate = st.top();
         

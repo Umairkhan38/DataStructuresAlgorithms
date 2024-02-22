@@ -5,15 +5,17 @@ using namespace std;
 class Stack{
 
     public:
+
     int *arr;
     int size;
     int top;
+
 
     // constructor
     Stack(int size){
         this->size = size;
         top = -1;
-        arr = new int[size];
+        arr = new int[size]; 
     } 
 
 
@@ -60,6 +62,7 @@ class Stack{
 };
 
 
+
 int main()
 {
 
@@ -74,3 +77,4 @@ int main()
 
     return 0;
 }
+

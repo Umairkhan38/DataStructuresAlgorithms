@@ -5,6 +5,8 @@
 using namespace std;
 
 
+//optimized approach
+
 vector<int>smallerNext(vector<int>arr, int n){
 
      stack<int>st;
@@ -58,11 +60,12 @@ int n = heights.size();
 vector<int>next(n);
 next = smallerNext(heights, n);
 
+
 vector<int>prev(n);
 prev = smallerPrev(heights, n);
 
 int area = INT_MIN;
-
+ 
 for(int i=0; i<n; i++){
 
     int l = heights[i];
@@ -78,6 +81,48 @@ for(int i=0; i<n; i++){
 }       
 
         return area;
+
+
+ //brute force approach
+    // int maxArea = -1;
+    // for(int i=0 ;i<n ; i++){
+
+    //     int left = i-1, right =i+1;
+    //       int area = heights[i];  
+
+    //     while(left>=0 && heights[left]>=heights[i]){
+
+    //         if(heights[left]==heights[i]){
+    //         area+=heights[left--];
+    //         }
+    //         else{
+    //             area += heights[i];
+    //             left--;
+    //         }
+
+    //         cout<<"area in left is "<<area<<endl;
+    //     }
+
+
+    //     while(right<=n-1 && heights[right]>=heights[i]){
+
+    //          if(heights[right] == heights[i]){
+    //         area+=heights[right++];
+    //         }
+    //         else{
+    //             area += heights[i];
+    //             right++;
+    //         }
+    //         cout<<"area in right is "<<area<<endl;
+    //     }
+
+    //     maxArea = max(area, maxArea);
+    //     cout<<"max area in iteratrion "<<i <<" is "<<maxArea <<endl;
+
+    // }
+    
+    // return maxArea;
+
 }
  
 

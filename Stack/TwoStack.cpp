@@ -17,6 +17,7 @@ public:
         top2 = s;
         arr = new int[s];
     }
+
     
     // Push in stack 1.
     void push1(int num) {
@@ -27,7 +28,9 @@ public:
        } 
     }
 
-    // Push in stack 2.
+
+
+    // Push in stack 2
     void push2(int num) {
         // Write your code here.
          if(top2-top1 > 1){
@@ -35,6 +38,7 @@ public:
            arr[top2] = num;
        } 
     }
+
 
     // Pop from stack 1 and return popped element.
     int pop1() {
@@ -47,6 +51,7 @@ public:
             return -1;
         }
     }
+
 
     // Pop from stack 2 and return popped element.
     int pop2() {
@@ -67,6 +72,7 @@ public:
             return false;
         }
     }
+
 };
 
 

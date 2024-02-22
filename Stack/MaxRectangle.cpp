@@ -3,7 +3,7 @@ using namespace std;
 #define MAX 1000
 
 
-    vector<int>smallerNext(int *arr, int n){
+vector<int>smallerNext(int *arr, int n){
 
      stack<int>st;
     vector<int>ans(n);
@@ -50,6 +50,7 @@ using namespace std;
     }
 
 
+
     int largestRectangleArea(int *heights, int m) {
     int n = m;
     
@@ -77,6 +78,7 @@ using namespace std;
     
             return area;
     } 
+ 
         
     
     int maxArea(int M[][4], int n, int m) {
@@ -104,7 +106,6 @@ using namespace std;
 
 
 
-//{ Driver Code Starts.
 int main() {
 
     int n=4,m=4;
@@ -115,5 +116,4 @@ int main() {
 
         cout <<"Max are can obtained as retangle is : "<< maxArea(M, n, m) << endl;
     }
-
 
