@@ -9,16 +9,16 @@ class Queue {
     int qfront;
     int rear;
 
-public:
+    public:
+
     Queue() {
         // Implement the Constructor
         size = 100001;
         arr = new int[size];
         qfront  = 0;
         rear = 0;
-
-
     }
+
 
 
     bool isEmpty() {
@@ -38,6 +38,7 @@ public:
 
     }
 
+
     int dequeue() {
         // pop operation
         if(qfront == rear){
@@ -56,6 +57,7 @@ public:
        
     }
 
+
     int front() {
         // Implement the front() function
         if(qfront == rear){
@@ -66,6 +68,7 @@ public:
         }
     }
 };
+
 
 
 int main(){
@@ -85,3 +88,4 @@ cout<<"Front element is "<<q1.front()<<endl;
 q1.isEmpty()==true ? cout<<"Queue is Empty " : cout<<"Queue is not empty"<<endl;
 
 }
+
