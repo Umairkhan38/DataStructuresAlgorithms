@@ -35,8 +35,8 @@ class Queue {
             arr[rear] = data;
             rear++;
         }
-
     }
+
 
 
     int dequeue() {
@@ -53,9 +53,9 @@ class Queue {
                 rear = 0;
             }
              return ans;
-        }
-       
+        }       
     }
+
 
 
     int front() {
