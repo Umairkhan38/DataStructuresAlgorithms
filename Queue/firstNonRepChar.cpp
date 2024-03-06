@@ -1,9 +1,8 @@
-//{ Driver Code Starts
 #include<bits/stdc++.h>
 using namespace std;
 
 
-		string FirstNonRepeating(string A){
+string FirstNonRepeating(string A){
         
         unordered_map<char,int>count;
         string ans="";
@@ -33,9 +32,9 @@ using namespace std;
             }
            
         }
-            return ans;
+        return ans;
 	
-		}
+    }
 
 
 
