@@ -18,7 +18,6 @@ void firstInterLeave(queue<int>&q, int n){
     }
 
 
-
     while(!st.empty()){
         int elem = st.top();
         st.pop();
@@ -63,11 +62,11 @@ void firstInterLeave(queue<int>&q, int n){
 int main()
 {
 queue<int>q;
-q.push(11);
-q.push(12);
-q.push(13);
-q.push(14);
-q.push(15);
+q.push(1);
+q.push(2);
+q.push(3);
+q.push(4);
+q.push(5);
 q.push(16);
 
 int n = q.size();

@@ -2,12 +2,11 @@
 using namespace std;
 
 
+vector<long long> printFirstNegativeInteger(long long int A[], long long int N, long long int K) {
 
-vector<long long> printFirstNegativeInteger(long long int A[],
-                                             long long int N, long long int K) {
-        
-                deque<long long int>dq;
-                vector<long long>ans;
+
+            deque<long long int>dq;
+            vector<long long>ans;
             
             for(int i=0;i<K;i++){
                     if(A[i]<0){
@@ -40,8 +39,7 @@ vector<long long> printFirstNegativeInteger(long long int A[],
                     }
                 }
 
-                    return ans;
-                                                 
+                    return ans;                    
  }
 
 
@@ -60,3 +58,4 @@ vector<long long> printFirstNegativeInteger(long long int A[],
     }
 
  }
+

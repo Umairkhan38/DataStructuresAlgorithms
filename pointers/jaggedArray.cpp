@@ -18,15 +18,9 @@ int main()
 
 	// no of columns for each row as input from user
 	for (int i = 0; i < row; i++) {
-		/*
-		cin>>col;	 //if col is taken as input
-		/ sizes[i]=col;
-		// store each col number in size ( if row and col
-		// are taken as input)
-		*/
 
 		arr[i] = new int[sizes[i]];
-		// creating column of sizes[i] for each row
+		
 	}
 
 	// input from user
